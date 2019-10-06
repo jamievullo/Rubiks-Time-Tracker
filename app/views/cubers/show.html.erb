@@ -1,0 +1,19 @@
+<header><img align="right" src="/images/The_Rock_Rubiks_Cube.gif"></header>
+
+    <br><h2><%= @cuber.name %>'s Home Page</h2>
+
+    <% cube_types.each do |type| %>
+    <a href='/cube_times/type/<%= type %>'><button type="submit"><%= type %></button></a>
+    <% end %>
+    <br>
+
+        <% if @last_5 %>
+            <br><p><%= "Last 5 Cube Times:" %></p>
+            <% @last_5.each do |x| %>
+            <p><%= x.cube_time %> - <%= x.cube_type %> - <%= x.created_at.strftime("%b, %d, %Y") %></p>
+        
+            <% end %>
+        <% else %>
+            <br><%= "You have no Cube Times currently, let's change that!!" %>
+        <% end %>   
+
