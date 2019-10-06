@@ -1,0 +1,2 @@
+class CubersController < ApplicationController
+end

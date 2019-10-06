@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cube_time: 1.5
+  cube_type: MyString
+  cuber_id: 1
+
+two:
+  cube_time: 1.5
+  cube_type: MyString
+  cuber_id: 1

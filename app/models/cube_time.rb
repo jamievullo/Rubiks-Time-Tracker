@@ -1,0 +1,4 @@
+class CubeTime < ApplicationRecord
+
+    
+end

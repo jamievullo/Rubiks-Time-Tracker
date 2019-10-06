@@ -1,0 +1,2 @@
+class CubeTimesController < ApplicationController
+end

@@ -1,0 +1,4 @@
+class Cuber < ApplicationRecord
+
+    
+end

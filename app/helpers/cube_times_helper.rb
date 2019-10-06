@@ -1,0 +1,2 @@
+module CubeTimesHelper
+end
