@@ -1,9 +1,13 @@
-<h3>Please enter your Username and Password to get started</h3>
-    <br>
-    <form action="/login" method="POST">
-        <label for="name">Username:</label>
-        <input id="name" type="text" name="name">
-        <label for="password">Password:</label>
-        <input id="password" type="password" name="password">
-        <input type="submit" value="Login">
-    </form>
+<h3>Please enter your Username and Password to get started</h3><br>
+    
+    <%= form_for(@cuber), url: '/cubers' do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Log In" %>
+
+    <% end %>

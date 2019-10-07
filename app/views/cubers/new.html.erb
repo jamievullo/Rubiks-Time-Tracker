@@ -1,0 +1,23 @@
+<h3>Welcome, you're about to take your first step to SpeedCubing Domination !!</h3>
+    <br>
+
+    <%= form_for(@cuber) do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Sign up" %>
+
+    <% end %>
+
+    <% if @cuber.errors.any? %>
+        <% @user.errors.full_messages.each do |msg| %>
+        <p style="color: red"><%= msg %></p>
+        <% end %>
+    <% end %>
