@@ -28,7 +28,7 @@ class CubersController < ApplicationController
             @last_5 = @cube_times.last(5)
             
             render :show
-            #erb :"/cubers/show"
+            
           else
       
             render :new

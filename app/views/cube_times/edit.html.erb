@@ -1,0 +1,8 @@
+<h3> <%= @cube_time.cube_time %></h3>
+
+    <form action="/cube_times/ <%= @cube_time.id %>" method="POST">
+        <input type="hidden" name="_method" value="PATCH">
+        <input type="float" name="cube_time">
+        <br>
+        <input type="submit" value="Edit">
+    </form>

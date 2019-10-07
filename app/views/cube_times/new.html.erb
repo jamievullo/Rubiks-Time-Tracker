@@ -1,0 +1,16 @@
+<br><h2><%= @cuber.name %>, Select Cube Type & Enter Your Cube Times Here</h2>
+    <h3>Select Cube Type:</h3>
+
+
+    <form action="/cube_times" method="POST">
+        <% cube_types.each do |type| %>
+        <input type="radio" name="cubetype" id="<%= type %>" value="<%= type %>"><%= type %></input></br>
+        <% end %>
+
+    <h3>Enter Your last Cube Time here:</h3>
+
+
+        <label for="cube_time">Time:</label>
+        <input id="cube_time" type="float" name="cube_time">
+        <input type="submit" value="Enter">
+    </form>

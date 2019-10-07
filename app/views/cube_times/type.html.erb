@@ -1,0 +1,17 @@
+<% cube_types.each do |type| %>
+    <a href='/cube_times/type/<%= type %>'><button type="submit"><%= type %></button></a>
+    <% end %>
+
+<h1>Your <%= @type %> Stats</h1>
+
+            <% if @best_cube_time %>
+                <p>Personal Best: <br> <%= @best_cube_time.cube_time %></p>
+                <p>Overall Average: <br> <%= @average_cube_time.round(2) %></p>
+            
+                <p>Last 5 Cube Times: </p>
+                <% @last_5.each do |x| %>
+                <p><%= x.cube_time %> - <%= x.created_at.strftime("%b, %d, %Y") %></p>
+                <% end %>
+            <% else %>
+                <%= "You have no cube times currently, let's change that!!" %>
+            <% end %>

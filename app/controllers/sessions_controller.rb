@@ -1,18 +1,18 @@
 class SessionsController < ApplicationController
 
     def new 
-        @cuber = Cuber.new
-        render :login
+        
     end
 
     def create 
         @cuber = Cuber.find_by(name: params[:name])
         if @cuber && @cuber.authenticate(params[:password])
           session[:cuber_id] = @cuber.id
-  
-          redirect_to "/cubers/#{cuber.id}"
+            flash[:success] = "Welcome, #{@cuber.name}"
+          redirect_to cuber_path(@cuber.id)
         else
-          redirect_to 'login'
+            flash[:danger] = "Improper credentials given"
+          redirect_to login_path
         end
     end
 

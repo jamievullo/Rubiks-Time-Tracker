@@ -10,7 +10,14 @@
   </head>
 
   <body>
-  <%= link_to "Log Out", logout_path, method: :delete %>
+  <header>
+  <% flash.each do |k, v| %>
+  <div class=<%= k %>><%= v %></div>
+  <% end %>
+  <%= navbar %>
+  </header>
+    
     <%= yield %>
+  
   </body>
 </html>

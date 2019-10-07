@@ -18,6 +18,9 @@ class ApplicationController < ActionController::Base
         ["2x2", "3x3", "4x4", "5x5", "3x3-OH", "3x3-BF", "3x3-FM", "Megaminx", "Pyraminx", "Skewb", "Square-1", "6x6", "7x7"]
     end
 
+    def authenticate 
+        redirect_to login_path if !logged_in?
+    end
 
 
 end

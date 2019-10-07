@@ -1,0 +1,13 @@
+<h3>Please enter your Username and Password to get started</h3><br>
+    
+    <%= form_tag("/login") do %>
+
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+    <br/>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <br/>
+    <%= submit_tag "Login" %>
+
+    <% end %>
