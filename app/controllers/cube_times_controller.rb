@@ -46,14 +46,33 @@ class CubeTimesController < ApplicationController
         end
     end
 
+    def cube_type 
+        if logged_in? 
+            @type = params[:cube_type]
+            @cuber = current_cuber
+            @times = CubeTime.where(cuber_id: @cuber.id).where(cube_type: params[:cube_type])
+            if @times.empty? 
+              redirect_to cube_times_path
+            else
+             @best_cube_time = @times.order(cube_time: :asc).first
+             @average_cube_time = @times.sum("cube_time")/@times.count
+             @last_5 = @times.last(5)
+             erb :"/cube_times/type" 
+            end
+          else
+            redirect_to login_path
+          
+          end  
+    end
+
     def edit
         if logged_in?
             @cuber = current_cuber
             @cube_time = CubeTime.find_by_id(params[:id])
             if @cube_time && @cube_time.cuber_id == current_cuber.id
-                erb :'cube_times/edit'
+                render cube_times_path(@cube_time.id)
             else
-                redirect_to '/cube_times'
+                redirect_to cube_times_path
             end
         else
             redirect_to login_path
